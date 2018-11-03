@@ -33,7 +33,7 @@
 <div class="row">
 		
 <div class="panel panel-primary">
-	<center><h2><b>M a y a   D e p l o y e r 2</b></h2></center>
+	<center><h2><b>I N F O B O X  -  D e p l o y e r</b></h2></center>
 	<hr>
     <div class="panel-body">
         <div class="jumbotron" style="width=100%; background-image: url(img/deployment.jpg); height: 350px;  ">
