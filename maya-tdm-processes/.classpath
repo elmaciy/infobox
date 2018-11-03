@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="lib" path="D:/selenium/libs/db2jcc.jar"/>
+	<classpathentry kind="lib" path="D:/selenium/libs/ojdbc7.jar"/>
+	<classpathentry kind="lib" path="D:/selenium/libs/mysql-connector-java-5.1.35-bin.jar"/>
+	<classpathentry kind="lib" path="D:/selenium/libs/javax.mail.jar"/>
+	<classpathentry kind="lib" path="D:/selenium/libs/commons-codec-1.9.jar" sourcepath="C:/Users/yildiray.elmaci/.m2/repository/commons-codec/commons-codec/1.9/commons-codec-1.9-sources.jar"/>
+	<classpathentry kind="lib" path="D:/selenium/libs/jtds-1.3.1.jar"/>
+	<classpathentry kind="lib" path="D:/selenium/libs/jbasejdbc.jar"/>
+	<classpathentry kind="lib" path="D:/selenium/libs/jremote.jar"/>
+	<classpathentry kind="lib" path="D:/selenium/libs/selenium-server-standalone-2.45.0.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="D:/selenium/libs/guava-14.0-rc1.jar"/>
+	<classpathentry kind="lib" path="D:/selenium/libs/commons-exec-1.1.jar"/>
+	<classpathentry kind="lib" path="D:/selenium/libs/commons_lang.jar"/>
+	<classpathentry kind="lib" path="D:/selenium/libs/svnkit-1.8.8.jar"/>
+	<classpathentry kind="lib" path="D:/selenium/libs/sequence-library-1.0.3.jar"/>
+	<classpathentry kind="lib" path="D:/selenium/libs/ant.jar"/>
+	<classpathentry kind="lib" path="D:/selenium/libs/ant-launcher.jar"/>
+	<classpathentry kind="lib" path="D:/selenium/libs/htmlcleaner-2.12.jar"/>
+	<classpathentry kind="lib" path="D:/selenium/libs/mongo-java-driver-3.0.2.jar" sourcepath="C:/Users/yelmaci/.m2/repository/org/mongodb/mongo-java-driver/3.0.2/mongo-java-driver-3.0.2-sources.jar"/>
+	<classpathentry kind="lib" path="D:/selenium/libs/bson-3.0.2.jar"/>
+	<classpathentry kind="lib" path="D:/selenium/libs/commons-io-2.4.jar"/>
+	<classpathentry kind="lib" path="D:/selenium/libs/sqljet-1.1.10.jar"/>
+	<classpathentry kind="lib" path="D:/selenium/libs/ant-contrib-1.0b3.jar"/>
+	<classpathentry kind="lib" path="D:/selenium/libs/wlfullclient.jar"/>
+	<classpathentry kind="lib" path="D:/selenium/libs/org.eclipse.jgit-4.0.2.201509141540-r.jar"/>
+	<classpathentry kind="lib" path="D:/selenium/libs/slf4j-api-1.7.12.jar"/>
+	<classpathentry kind="lib" path="D:/selenium/libs/slf4j-jcl-1.7.12.jar"/>
+	<classpathentry kind="lib" path="D:/selenium/libs/log4j-api-2.4.jar"/>
+	<classpathentry kind="lib" path="D:/selenium/libs/log4j-core-2.4.jar"/>
+	<classpathentry kind="lib" path="D:/selenium/libs/log4j-1.2-api-2.4.jar"/>
+	<classpathentry kind="lib" path="D:/selenium/libs/hive4/hive_metastore.jar"/>
+	<classpathentry kind="lib" path="D:/selenium/libs/hive4/hive_service.jar"/>
+	<classpathentry kind="lib" path="D:/selenium/libs/hive4/HiveJDBC4.jar"/>
+	<classpathentry kind="lib" path="D:/selenium/libs/hive4/libfb303-0.9.0.jar"/>
+	<classpathentry kind="lib" path="D:/selenium/libs/hive4/libthrift-0.9.0.jar"/>
+	<classpathentry kind="lib" path="D:/selenium/libs/hive4/log4j-1.2.14.jar"/>
+	<classpathentry kind="lib" path="D:/selenium/libs/hive4/ql.jar"/>
+	<classpathentry kind="lib" path="D:/selenium/libs/hive4/slf4j-api-1.5.8.jar"/>
+	<classpathentry kind="lib" path="D:/selenium/libs/hive4/slf4j-log4j12-1.5.8.jar"/>
+	<classpathentry kind="lib" path="D:/selenium/libs/hive4/TCLIServiceClient.jar"/>
+	<classpathentry kind="lib" path="D:/selenium/libs/gsp.jar"/>
+	<classpathentry kind="lib" path="D:/selenium/libs/postgresql-9.3-1102.jdbc4.jar"/>
+	<classpathentry kind="lib" path="D:/selenium/libs/jconn4.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

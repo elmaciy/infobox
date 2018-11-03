@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+    <Parameter name="javax.faces.PROJECT_STAGE" value="Development" override="false"/>
+    <Parameter name="javax.faces.FACELETS_REFRESH_PERIOD" value="1" override="false"/>
+    	
+    	<Resource name="jdbc/tdmconfig" auth="Container"
+              type="javax.sql.DataSource" driverClassName="com.mysql.jdbc.Driver"
+              url="jdbc:mysql://localhost/test"
+              connectionProperties="useUnicode=yes;characterEncoding=utf8;"
+              username="ssping" password="123" maxActive="20" maxIdle="10"
+              maxWait="-1"/>
+	
+
+</Context>

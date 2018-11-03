@@ -1,0 +1,30 @@
+id	discovery_title	create_date	catalog_name	schema_name	table_name	table_score	field_name	field_type	description	description	match_count	sample_count	rule_weight	is_masked	
+26432	New Discovery @ Mon Oct 09 00:28:16 AST 2017	09.10.2017 00:28:29	master	dbo	spt_mda	0.20	mdinfo	varchar(255)	Individual Info	En cok kullanilan isimler TR	2	100	10	NO	
+26433	New Discovery @ Mon Oct 09 00:28:16 AST 2017	09.10.2017 00:28:29	master	dbo	spt_jtext	10.00	value	text(2147483647)	Individual Info	En cok kullanilan isimler TR	1	1	10	NO	
+26434	New Discovery @ Mon Oct 09 00:28:16 AST 2017	09.10.2017 00:28:29	master	dbo	spt_ijdbc_mda	1.30	mdinfo	varchar(30)	Individual Info	En cok kullanilan isimler TR	2	100	10	NO	
+26435	New Discovery @ Mon Oct 09 00:28:16 AST 2017	09.10.2017 00:28:29	master	dbo	spt_ijdbc_mda	5.20	pre_query	varchar(600)	Individual Info	En cok kullanilan isimler TR	11	25	10	NO	
+26436	New Discovery @ Mon Oct 09 00:28:16 AST 2017	09.10.2017 00:28:29	master	dbo	monWaitEventInfo	0.20	Description	varchar(255)	Individual Info	En cok kullanilan isimler TR	2	100	10	NO	
+26437	New Discovery @ Mon Oct 09 00:28:16 AST 2017	09.10.2017 00:28:29	master	dbo	jdbc_function_escapes	0.21	escape_name	varchar(40)	Individual Info	En cok kullanilan isimler TR	1	95	10	NO	
+26438	New Discovery @ Mon Oct 09 00:28:16 AST 2017	09.10.2017 00:28:29	master	dbo	jdbc_function_escapes	0.21	map_string	varchar(254)	Individual Info	En cok kullanilan isimler TR	1	95	10	NO	
+26439	New Discovery @ Mon Oct 09 00:28:16 AST 2017	09.10.2017 00:28:29	master	dbo	ijdbc_function_escapes	0.23	escape_name	varchar(40)	Individual Info	En cok kullanilan isimler TR	1	88	10	NO	
+26440	New Discovery @ Mon Oct 09 00:28:16 AST 2017	09.10.2017 00:28:29	master	dbo	ijdbc_function_escapes	0.23	map_string	varchar(40)	Individual Info	En cok kullanilan isimler TR	1	88	10	NO	
+26441	New Discovery @ Mon Oct 09 00:28:16 AST 2017	09.10.2017 00:28:29	master	dbo	monProcedureCacheMemoryUsage	0.18	AllocatorName	varchar(30)	Individual Info	En cok kullanilan isimler TR	1	56	10	NO	
+26442	New Discovery @ Mon Oct 09 00:28:16 AST 2017	09.10.2017 00:28:29	pubs2	dbo	au_pix	5.00	pic	image(2147483647)	Other	Binary Data	6	6	5	NO	
+26443	New Discovery @ Mon Oct 09 00:28:16 AST 2017	09.10.2017 00:28:29	pubs2	dbo	authors	0.34	au_fname	varchar(20)	Individual Info	En cok kullanilan isimler TR	1	29	10	NO	
+26444	New Discovery @ Mon Oct 09 00:28:16 AST 2017	09.10.2017 00:28:29	pubs2	dbo	autors_big	20.00	fname	varchar(40)	Individual Info	En cok kullanilan isimler TR	100	100	10	NO	
+26445	New Discovery @ Mon Oct 09 00:28:16 AST 2017	09.10.2017 00:28:29	pubs2	dbo	autors_big	20.00	lname	varchar(40)	Individual Info	En cok kullanilan soyisimler TR	100	100	10	NO	
+26446	New Discovery @ Mon Oct 09 00:28:16 AST 2017	09.10.2017 00:28:29	pubs2	dbo	autors_big_temp	20.00	fname	varchar(40)	Individual Info	En cok kullanilan isimler TR	100	100	10	NO	
+26447	New Discovery @ Mon Oct 09 00:28:16 AST 2017	09.10.2017 00:28:29	pubs2	dbo	autors_big_temp	20.00	lname	varchar(40)	Individual Info	En cok kullanilan soyisimler TR	100	100	10	NO	
+26448	New Discovery @ Mon Oct 09 00:28:16 AST 2017	09.10.2017 00:28:29	pubs2	dbo	stores	1.43	stor_name	varchar(40)	Individual Info	En cok kullanilan isimler TR	1	7	10	NO	
+26449	New Discovery @ Mon Oct 09 00:28:16 AST 2017	09.10.2017 00:28:29	pubs2	dbo	titles	0.59	notes	varchar(200)	Individual Info	En cok kullanilan isimler TR	1	17	10	NO	
+26450	New Discovery @ Mon Oct 09 00:28:16 AST 2017	09.10.2017 00:28:29	pubs3	dbo	authors	0.43	au_fname	varchar(20)	Individual Info	En cok kullanilan isimler TR	1	23	10	NO	
+26451	New Discovery @ Mon Oct 09 00:28:16 AST 2017	09.10.2017 00:28:29	pubs3	dbo	store_employees	0.33	emp_lname	varchar(40)	Individual Info	En cok kullanilan isimler TR	2	61	10	NO	
+26452	New Discovery @ Mon Oct 09 00:28:16 AST 2017	09.10.2017 00:28:29	pubs3	dbo	stores	1.43	stor_name	varchar(40)	Individual Info	En cok kullanilan isimler TR	1	7	10	NO	
+26453	New Discovery @ Mon Oct 09 00:28:16 AST 2017	09.10.2017 00:28:29	pubs3	dbo	titles	0.59	notes	varchar(200)	Individual Info	En cok kullanilan isimler TR	1	17	10	NO	
+26454	New Discovery @ Mon Oct 09 00:28:16 AST 2017	09.10.2017 00:28:29	sybsystemprocs	dbo	spt_sybdrv	0.32	type_name	varchar(20)	Individual Info	En cok kullanilan isimler TR	1	31	10	NO	
+26455	New Discovery @ Mon Oct 09 00:28:16 AST 2017	09.10.2017 00:28:29	sybsystemprocs	dbo	spt_server_info	0.33	attribute_name	varchar(60)	Individual Info	En cok kullanilan isimler TR	1	30	10	NO	
+26456	New Discovery @ Mon Oct 09 00:28:16 AST 2017	09.10.2017 00:28:29	sybsystemprocs	dbo	spt_datatype_info	1.43	type_name	varchar(32)	Individual Info	En cok kullanilan isimler TR	2	35	10	NO	
+26457	New Discovery @ Mon Oct 09 00:28:16 AST 2017	09.10.2017 00:28:29	sybsystemprocs	dbo	spt_datatype_info	1.43	local_type_name	varchar(128)	Individual Info	En cok kullanilan isimler TR	3	35	10	NO	
+26458	New Discovery @ Mon Oct 09 00:28:16 AST 2017	09.10.2017 00:28:29	sybsystemprocs	dbo	spt_jdatatype_info	0.37	local_type_name	varchar(128)	Individual Info	En cok kullanilan isimler TR	1	27	10	NO	
+26459	New Discovery @ Mon Oct 09 00:28:16 AST 2017	09.10.2017 00:28:29	sybsystemprocs	dbo	spt_jdbc_datatype_info	0.61	type_name	varchar(255)	Individual Info	En cok kullanilan isimler TR	1	33	10	NO	
+26460	New Discovery @ Mon Oct 09 00:28:16 AST 2017	09.10.2017 00:28:29	sybsystemprocs	dbo	spt_jdbc_datatype_info	0.61	local_type_name	varchar(128)	Individual Info	En cok kullanilan isimler TR	1	33	10	NO	

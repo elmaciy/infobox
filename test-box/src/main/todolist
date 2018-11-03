@@ -1,0 +1,31 @@
+testcase icin parametreler secilir. input, output. default degerler de verilir. flex lerden belirlenebilir. 
+Ayrica domain parametreleri belirlenir. 
+
+tree search ekle
+flex fieldlerde validasyonlar olsun (liste, javascript, regex, sql) ve validasyon mesajı
+cut/paste yapildi ama copy/paste isi yapilmadi. recusive olarak kopyalama...
+silme isleminde gercekten silme olmaz. sadece iptal edilir.
+checkout yapildiginda 1. versiyondan sonra eski versiyon saklanir (tum yapi bitince yap bunu)
+checkout yapildiginda mutlaka bir change istenir.
+configration dan gelen mad_ ile baslayan tablo isimlerini tdm_test_ olarak degistir. hem kodda hem install da
+onConfigSearchEnterStrings deki diger search leri kapatmistik , ac bitir
+Lov lerdeki filtreleme ve refresh calismiyor
+deleteFlexField in basindaki silme kontrollerini yaz, kullanilan field silinemesin
+LOV ler acildiginda console da su hata oluyor. "No such div found id : lovBody @ajaxDynamicComponentCaller"
+configde kullanilan tum tablolari kuruluma ekle
+test method u bitir
+attachment flex field i bitir
+saveTreeNodeDO da degismemis olani kaydetmesin bosuna
+Step silerken, tüm testi tekrar yüklediğinden, testcase header deki değişiklikler de kayboluyor. sadece sildiği satırı silsin
+DATE VE DATETIME alanları kaydetmiyor
+picklist de sağ tarafa attiklarinin ilk açılışta sadece değerini gösteriyor. Başlığı da görünmeli.
+LOV tipinde bir flex field vardi, bunu da ekle
+parametrelerde in ve out lar icinde ayni isimde iki parametre olamaz, parametre ismi mutlaka kullanilmalidir. yoksa default verilmeli
+parametre silerken eger bagimlilik varsa silmesine izin vermemeli
+test parametreler icin validasyon olsun. giriste hepsi TEXT olacak, validasyonla dogrulanacak. flex_field kaldirilacak
+referans edilen testlerin id leri gosteriliyor. Buraya tiklaninca ilgili testin icerigi gorulebilsin.
+Mulitiline tipinde de test paramatresi ekle
+silerken, linkli ya da refere edilmis olan bir item varsa uyari veriyor ancak bu uyari detaylarini da vermeli.
+domain ve grup ilişkisini koy. Grupta olmayanlar için domain listesi çıkmasın
+
+TreePicker e session bazında en son nerede kaldiysa orasini gosterecek bir yapi koy

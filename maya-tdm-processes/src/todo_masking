@@ -1,0 +1,18 @@
+maskeleme konfigurasyonunun ve kopyalama konfigurasyonunun export ve import edilebilmesi
+mysql de maskLib de "SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED" yaparken hata aliyor. "Transaction characteristics can't be changed while a transaction is in progress
+database lerde catalog var ama, pre ve post scriptlerde de default disinda bir catalog seçilebilmeli. mssql i düþün hep.
+statik maskeleme post scriptlerde ayný tabloya ait iki alter ayný anda çalýþmamalý. 
+MSSQL in runOnServer ini bitir 
+
+		
+		
+Sybase özelliði ekle. Finans da Sybase var
+Kum saatini artik koy, ekranlarin beklediði belli olsun
+
+
+
+COPY : Kopyalamada MSSQL de kopyalama öncesi karþýlaþtýrma ekranýnda PK ve eksik field kontrollerini de düzelt
+COPY : içinde boþluk ve büyük küçük harf olan tablo ve kolonlarý ayarla
+COPY : BINARY leri BINARYSTREAM olarak bind etmemiz lazým
+COPY : Cannot insert explicit value for identity column in table 'Employees' when IDENTITY_INSERT is set to OFF. (SET IDENTITY_INSERT Table_Name ON/OFF)
+COPY : MSSQL de tüm data tiplerini dene

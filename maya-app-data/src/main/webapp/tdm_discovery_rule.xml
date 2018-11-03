@@ -1,0 +1,1055 @@
+<DATA>
+
+	<ROW>
+		<id>65136</id>
+		<discovery_target_id>1</discovery_target_id>
+		<rule_type>MATCHES</rule_type>
+		<description>En çok kullanılan isimler Türkiye</description>
+		<regex>(.*)MUSTAFA|AHMET|YUSUF|ALİ|ALI|MEHMET|FATMA|MURAT|H(.)SEY(.)N|(.)BRAH(.)M|(.)MER|AY(.)E|AYSE|AYŞE|RAMAZAN|ELİF|ELIF|HAT(.)CE|KEMAL|ZEYNEP|ABDULLAH|(.)SMA(.)L|OSMAN|EMİNE|EMINE|FATİH|FATIH|HAKAN(.*)</regex>
+		<script>NULL</script>
+		<field_names>NAME
+
+FNAME
+
+FIRST_NAME
+
+FIRSTNAME
+
+CUSTOMER_NAME
+
+ADI
+
+ISIM
+
+ISMI</field_names>
+	</ROW>
+
+	<ROW>
+		<id>65142</id>
+		<discovery_target_id>3</discovery_target_id>
+		<rule_type>MATCHES</rule_type>
+		<description>Email Address</description>
+		<regex>(.*)[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})(.*)</regex>
+		<script>NULL</script>
+		<field_names>EMAIL
+
+EMAILADDR
+
+EMAIL_ADDR
+
+EMAIL_ADDRESS</field_names>
+	</ROW>
+
+	<ROW>
+		<id>65143</id>
+		<discovery_target_id>5</discovery_target_id>
+		<rule_type>MATCHES</rule_type>
+		<description>Url</description>
+		<regex>(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;amp;:/~\+#]*[\w\-\@?^=%&amp;amp;/~\+#])?</regex>
+		<script>NULL</script>
+		<field_names>URL
+
+URL_INFO
+
+URL_ADDRESS
+
+WEB
+
+WEB_ADDR
+
+HTTP
+
+URL_ADDR
+
+IP
+
+IP_ADDR
+
+HOST
+
+HOSTNAME
+
+HOST_NAME</field_names>
+	</ROW>
+
+	<ROW>
+		<id>65146</id>
+		<discovery_target_id>7</discovery_target_id>
+		<rule_type>JS</rule_type>
+		<description>TC Kimlik No</description>
+		<regex>NULL</regex>
+		<script>
+
+function calcul(){
+
+var strin=&quot;${1}&quot;;
+
+var TCKNArr=strin.split(&quot; &quot;);
+
+for (var t=0;t<TCKNArr.length;t++) {
+
+var TCKN=TCKNArr[t];
+
+if ((TCKN == null) ||  (TCKN.length==0) ) continue;
+if (TCKN.length != 11)  continue;
+if (isNaN(TCKN))  continue;
+var ilk_hane=TCKN.charAt(1-1);
+if (ilk_hane==&quot;0&quot;)  continue;
+
+var tek=0;
+tek=tek+parseInt(TCKN.charAt(9-1));
+tek=tek+parseInt(TCKN.charAt(7-1));
+tek=tek+parseInt(TCKN.charAt(5-1));
+tek=tek+parseInt(TCKN.charAt(3-1));
+tek=tek+parseInt(TCKN.charAt(1-1));
+
+var cift=0;
+cift=cift+parseInt(TCKN.charAt(8-1));
+cift=cift+parseInt(TCKN.charAt(6-1));
+cift=cift+parseInt(TCKN.charAt(4-1));
+cift=cift+parseInt(TCKN.charAt(2-1));
+
+var ctrl=(tek*7-cift)%10;
+var hane_10=parseInt(TCKN.charAt(10-1));
+if(ctrl!=hane_10) continue;
+
+
+return true;
+
+} //for (var t=0;t<TCKNArr.length;t++)
+
+
+}
+
+
+var a=true;
+
+a=calcul();
+ 
+
+ </script>
+		<field_names>TCKN
+
+KIMLIKNO
+
+KIMLIK_NO
+
+KIMLIK_NUM
+
+KIMLIK_NUMARASI
+
+TCKN_NO
+
+TCKNO
+
+SOCIALNUM
+
+SOCIAL_NUMNUM
+
+SOCIAL_NUMBER
+
+SOCIALNO
+
+SOCIAL_NO</field_names>
+	</ROW>
+
+	<ROW>
+		<id>65147</id>
+		<discovery_target_id>7</discovery_target_id>
+		<rule_type>MATCHES</rule_type>
+		<description>Nufus Cüzdan No</description>
+		<regex>^[A-Z0-9]{3}-[0-9]{6}$</regex>
+		<script>NULL</script>
+		<field_names>NULL</field_names>
+	</ROW>
+
+	<ROW>
+		<id>65149</id>
+		<discovery_target_id>6</discovery_target_id>
+		<rule_type>JS</rule_type>
+		<description>Turkiye Yurtici Mobil, Telefon</description>
+		<regex>^\+([\d]{0,3})\.([\d]{7,10})$</regex>
+		<script>function calcul(){
+
+
+
+var TELNO=&quot;${1}&quot;;
+
+
+
+if ((TELNO == null) ||  (TELNO.length==0) ) return false;
+
+TELNO=TELNO.replace(/\s+/g,&quot;&quot;);
+
+
+
+
+
+if (TELNO.length &lt; 10) return false;
+
+
+
+
+
+
+
+
+
+if (TELNO.length&gt;10) {
+
+var x1=TELNO.substring(TELNO.length-11,TELNO.length-10);
+
+if (x1!=&quot;0&quot;) return false;
+
+}
+
+
+
+
+
+if (TELNO.length&gt;11) {
+
+var x1=TELNO.substring(TELNO.length-12,TELNO.length-10);
+
+if (x1!=&quot;90&quot;) return false;
+
+}
+
+
+
+
+
+if (TELNO.length&gt;12) {
+
+var x1=TELNO.substring(TELNO.length-13,TELNO.length-10);
+
+if (x1!=&quot;090&quot; &amp;&amp; x1!=&quot;+90&quot;) return false;
+
+}
+
+
+
+var trimmed10=TELNO.substring(TELNO.length-10,TELNO.length);
+
+
+
+
+
+if (isNaN(trimmed10)) return false;
+
+
+
+var trimmed3=trimmed10.substring(0,3);
+
+
+
+
+
+var prefixlist=&quot;530,531,532,533,534,535,536,537,538,539,541,542,543,544,545,546,547,548,549,505, 506, 507, 501, 550,551, 552, 553, 554, 555, 559,&quot;;
+
+
+
+prefixlist=prefixlist + &quot;322,416,272,472,382,358,312,242,478,466,256,266,378,488,458,228,426,434,374,248,224,286,376,364,258,412,374,284,424,446,&quot;;
+
+prefixlist=prefixlist + &quot;442,222,342,454,456,438,326,476,246,324,212,216,232,370,338,474,366,352,318,288,386,348,344,262,332,274,422,236,482,252,&quot;;
+
+prefixlist=prefixlist + &quot;436,384,388,452,328,464,264,362,484,368,346,414,486,282,356,462,428,276,432,226,354,372&quot;;
+
+
+
+if (prefixlist.indexOf(trimmed3)==-1) return false;
+
+
+
+
+
+
+
+return true;
+
+
+
+
+
+}
+
+
+
+
+
+var a=true;
+
+
+
+a=calcul();
+
+</script>
+		<field_names>TELEFON
+
+TEL
+
+TELNO
+
+FAX
+
+FAXNO
+
+FAX_NO
+
+FAXNUMBER
+
+FAX_NR
+
+CONTACT_PHONE
+
+PHONENO
+
+PHONE_NUMBER
+
+PHONE_NUM
+
+MOBILE
+
+MOBILENUMBER
+
+MOBILE_NUM
+
+MOBILE_NUMBER
+
+CEP
+
+CEPNO
+
+TELFON
+
+TELEFON_NO
+
+A_NUMBER
+
+B_NUMBER
+
+ANUMBER
+
+BNUMBER</field_names>
+	</ROW>
+
+	<ROW>
+		<id>65152</id>
+		<discovery_target_id>5</discovery_target_id>
+		<rule_type>MATCHES</rule_type>
+		<description>IP Addresses</description>
+		<regex>^(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9])\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[0-9])$</regex>
+		<script>NULL</script>
+		<field_names></field_names>
+	</ROW>
+
+	<ROW>
+		<id>65155</id>
+		<discovery_target_id>5</discovery_target_id>
+		<rule_type>MATCHES</rule_type>
+		<description>Simple URL</description>
+		<regex>^((ht|f)tp(s?))\://([0-9a-zA-Z\-]+\.)+[a-zA-Z]{2,6}(\:[0-9]+)?(/\S*)?$</regex>
+		<script>NULL</script>
+		<field_names></field_names>
+	</ROW>
+
+	<ROW>
+		<id>65160</id>
+		<discovery_target_id>5</discovery_target_id>
+		<rule_type>MATCHES</rule_type>
+		<description>Simple domain</description>
+		<regex>^[A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$</regex>
+		<script>NULL</script>
+		<field_names>NULL</field_names>
+	</ROW>
+
+	<ROW>
+		<id>65161</id>
+		<discovery_target_id>1</discovery_target_id>
+		<rule_type>MATCHES</rule_type>
+		<description>En çok kullanılan soyisimler Türkiye</description>
+		<regex>(.*)YILMAZ|KAYA|DEM(.)R|(.)SAH(.)N|(.)SEL(.)K|YILDIZ|YILDIRIM|(.)ZT(.)RK|AYDIN|(.)ZDEM(.)R|ARSLAN|ASLAN|KILI(.)|(.)ET(.)N|KURT(.*)</regex>
+		<script>NULL</script>
+		<field_names>SURNAME
+
+LNAME
+
+LAST_NAME
+
+CUSTOMER_LAST_NAME
+
+FAMILY_NAME
+
+SOYADI
+
+SOYAD
+
+SOYISIM</field_names>
+	</ROW>
+
+	<ROW>
+		<id>65162</id>
+		<discovery_target_id>2</discovery_target_id>
+		<rule_type>MATCHES</rule_type>
+		<description>Address Info</description>
+		<regex>(.*) SOKAK| SOKA[ğg]?I| CADDE| CAD.| APT| APARTMAN[iı]?| MAHALLE| MAH.| NO:| K[oö]?Y| KAT:(.*)</regex>
+		<script>NULL</script>
+		<field_names>ADDRESS
+
+ADDRLINE
+
+ADDR_LINE
+
+CITY_ID
+
+CITYID
+
+CITY_NAME
+
+CITYNAME
+
+TOWN
+
+TOWN_NAME
+
+TOWNID
+
+TOWN_ID
+
+TOWNNAME
+
+STREET
+
+VILLAGE
+
+VILLAGENAME
+
+VILLAGE_NAME
+
+DOORNUM
+
+DOOR_NUM
+
+DOOR_NUMBER
+
+DOOR_NO
+
+DOORNO
+
+SEHIR
+
+IL
+
+ILCE
+
+MAHALLE
+
+SOKAK
+
+KOY
+
+CADDE
+
+KAPINO
+
+KAPI_NO
+
+KAPI
+
+ADRES1
+
+ADRES2
+
+ADRES3</field_names>
+	</ROW>
+
+	<ROW>
+		<id>65163</id>
+		<discovery_target_id>9</discovery_target_id>
+		<rule_type>MATCHES</rule_type>
+		<description>Company Name</description>
+		<regex>(.*)SAN.T[iİ]C.LTD.[ŞS]TI.|L[iİ]M[iİ]TED Ş[iİ]RKET[iİ]|(.)T[iİ]C. SAN. A.[SŞ].|T[iİ]C. LTD. [SŞ]T[iİ].|SANAY[iİ] VE T[iİ]C. A.[SŞ].(.*)</regex>
+		<script>NULL</script>
+		<field_names>COMPANY_NAME
+
+COMPANY
+
+SIRKET
+
+SIRKET_ADI
+
+KURUM
+
+KURUM_ADI</field_names>
+	</ROW>
+
+	<ROW>
+		<id>65164</id>
+		<discovery_target_id>8</discovery_target_id>
+		<rule_type>JS</rule_type>
+		<description>Credit Card No</description>
+		<regex>NULL</regex>
+		<script>function calcul(){
+
+
+
+var CCNO=&quot;${1}&quot;;
+
+
+
+if ((CCNO == null) ||  (CCNO.length==0) ) return false;
+
+CCNO=CCNO.replace(/\s+/g,&quot;&quot;);
+
+
+
+
+
+if (CCNO.length != 16) return false;
+
+if (isNaN(CCNO)) return false;
+
+
+
+
+
+
+
+var ilk_hane=CCNO.charAt(1-1);
+
+if (ilk_hane==&quot;0&quot;) return false;
+
+
+
+var tek=0;
+
+var d=0;
+
+
+
+d=parseInt(CCNO.charAt(1-1))*2; tek=tek+d%10; if (d&gt;=10) tek=tek+1;
+
+d=parseInt(CCNO.charAt(3-1))*2; tek=tek+d%10; if (d&gt;=10) tek=tek+1;
+
+d=parseInt(CCNO.charAt(5-1))*2; tek=tek+d%10; if (d&gt;=10) tek=tek+1;
+
+d=parseInt(CCNO.charAt(7-1))*2; tek=tek+d%10; if (d&gt;=10) tek=tek+1;
+
+d=parseInt(CCNO.charAt(9-1))*2; tek=tek+d%10; if (d&gt;=10) tek=tek+1;
+
+d=parseInt(CCNO.charAt(11-1))*2; tek=tek+d%10; if (d&gt;=10) tek=tek+1;
+
+d=parseInt(CCNO.charAt(13-1))*2; tek=tek+d%10; if (d&gt;=10) tek=tek+1;
+
+d=parseInt(CCNO.charAt(15-1))*2; tek=tek+d%10; if (d&gt;=10) tek=tek+1;
+
+
+
+
+
+
+
+
+
+var cift=0;
+
+
+
+
+
+cift=cift+parseInt(CCNO.charAt(2-1));
+
+cift=cift+parseInt(CCNO.charAt(4-1));
+
+cift=cift+parseInt(CCNO.charAt(6-1));
+
+cift=cift+parseInt(CCNO.charAt(8-1));
+
+cift=cift+parseInt(CCNO.charAt(10-1));
+
+cift=cift+parseInt(CCNO.charAt(12-1));
+
+cift=cift+parseInt(CCNO.charAt(14-1));
+
+cift=cift+parseInt(CCNO.charAt(16-1));
+
+
+
+
+
+var ctrl=(tek+cift)%10;
+
+
+
+if(ctrl!=0) return false;
+
+
+
+
+
+return true;
+
+}
+
+
+
+
+
+var a=true;
+
+
+
+a=calcul();
+
+ </script>
+		<field_names>CCNO
+
+CREDIT_CARD
+
+CC_NO
+
+CC_NUM
+
+CC_NUMBER
+
+CCNUM
+
+CC
+
+KREDI_KART
+
+KREDIKARTI</field_names>
+	</ROW>
+
+	<ROW>
+		<id>65165</id>
+		<discovery_target_id>9</discovery_target_id>
+		<rule_type>JS</rule_type>
+		<description>Vergi Kimlik No</description>
+		<regex>NULL</regex>
+		<script>function calcul(){
+
+
+
+var VKNO=&quot;${1}&quot;;
+
+
+
+if ((VKNO == null) ||  (VKNO.length==0) ) return false;
+
+VKNO=VKNO.replace(/\s+/g,&quot;&quot;);
+
+
+
+
+
+if (VKNO.length != 10) return false;
+
+if (isNaN(VKNO)) return false;
+
+
+
+
+
+
+
+var ilk_hane=VKNO.charAt(1-1);
+
+if (ilk_hane==&quot;0&quot;) return false;
+
+
+
+
+
+    var v1 = 0;
+
+    var v2 = 0;
+
+    var v3 = 0;
+
+    var v4 = 0;
+
+    var v5 = 0;
+
+    var v6 = 0;
+
+    var v7 = 0;
+
+    var v8 = 0;
+
+    var v9 = 0;
+
+    var v11 = 0;
+
+    var v22 = 0;
+
+    var v33 = 0;
+
+    var v44 = 0;
+
+    var v55 = 0;
+
+    var v66 = 0;
+
+    var v77 = 0;
+
+    var v88 = 0;
+
+    var v99 = 0;
+
+    var v_last_digit = 0;
+
+    var toplam = 0;
+
+
+
+ 
+
+    var desen = /[0-9]{10}/;
+
+ 
+
+ 
+
+    if (VKNO.length == 10) {
+
+ 
+
+        v1 = (Number(VKNO.charAt(0)) + 9) % 10;
+
+ 
+
+        v2 = (Number(VKNO.charAt(1)) + 8) % 10;
+
+ 
+
+        v3 = (Number(VKNO.charAt(2)) + 7) % 10;
+
+ 
+
+        v4 = (Number(VKNO.charAt(3)) + 6) % 10;
+
+ 
+
+        v5 = (Number(VKNO.charAt(4)) + 5) % 10;
+
+ 
+
+        v6 = (Number(VKNO.charAt(5)) + 4) % 10;
+
+        v7 = (Number(VKNO.charAt(6)) + 3) % 10;
+
+        v8 = (Number(VKNO.charAt(7)) + 2) % 10;
+
+        v9 = (Number(VKNO.charAt(8)) + 1) % 10;
+
+        v_last_digit = Number(VKNO.charAt(9));
+
+ 
+
+        v11 = (v1 * 512) % 9;
+
+        v22 = (v2 * 256) % 9;
+
+        v33 = (v3 * 128) % 9;
+
+        v44 = (v4 * 64) % 9;
+
+        v55 = (v5 * 32) % 9;
+
+        v66 = (v6 * 16) % 9;
+
+        v77 = (v7 * 8) % 9;
+
+        v88 = (v8 * 4) % 9;
+
+        v99 = (v9 * 2) % 9;
+
+ 
+
+        if (v1 != 0 &amp;&amp; v11 == 0) v11 = 9;
+
+        if (v2 != 0 &amp;&amp; v22 == 0) v22 = 9;
+
+        if (v3 != 0 &amp;&amp; v33 == 0) v33 = 9;
+
+        if (v4 != 0 &amp;&amp; v44 == 0) v44 = 9;
+
+        if (v5 != 0 &amp;&amp; v55 == 0) v55 = 9;
+
+        if (v6 != 0 &amp;&amp; v66 == 0) v66 = 9;
+
+        if (v7 != 0 &amp;&amp; v77 == 0) v77 = 9;
+
+        if (v8 != 0 &amp;&amp; v88 == 0) v88 = 9;
+
+        if (v9 != 0 &amp;&amp; v99 == 0) v99 = 9;
+
+        toplam = v11 + v22 + v33 + v44 + v55 + v66 + v77 + v88 + v99;
+
+ 
+
+ 
+
+        if (toplam % 10 == 0) toplam = 0;
+
+        else toplam = (10 - (toplam % 10));
+
+ 
+
+        if (toplam == v_last_digit) {
+
+ 
+
+ 
+
+            return true;
+
+        } else return false;
+
+ 
+
+    } else return false;
+
+}
+
+
+
+
+
+var a=true;
+
+
+
+a=calcul();
+
+</script>
+		<field_names>VKNO
+
+VERGINO
+
+VERGI_NO
+
+VERGI_DAIRESI
+
+VERGI_NUMARASI
+
+TAX
+
+TAX_NUM
+
+TAXOFC
+
+TAX_OFFICE</field_names>
+	</ROW>
+
+	<ROW>
+		<id>65166</id>
+		<discovery_target_id>1</discovery_target_id>
+		<rule_type>MATCHES</rule_type>
+		<description>Arac Plaka TR</description>
+		<regex>^\d{2}\s?[A-Za-z]{1,3}\s?\d{2,4}$</regex>
+		<script>NULL</script>
+		<field_names>PLAKA
+
+ARAC_PLAKA
+
+ARACPLAKA
+
+PLAKANO
+
+PLAKA_NO</field_names>
+	</ROW>
+
+	<ROW>
+		<id>65167</id>
+		<discovery_target_id>8</discovery_target_id>
+		<rule_type>MATCHES</rule_type>
+		<description>TR IBAN Number</description>
+		<regex>^TR\d{7}[0-9A-Z]{17}$|^\d{5}[0-9A-Z]{17}$|^TR[0-9A-Z]{4}\040[0-9A-Z]{4}\040[0-9A-Z]{4}\040[0-9A-Z]{4}\040[0-9A-Z]{4}\040[0-9A-Z]{4}|^TR[0-9A-Z]{2}\040[0-9A-Z]{4}\040[0-9A-Z]{4}\040[0-9A-Z]{4}\040[0-9A-Z]{4}\040[0-9A-Z]{4}\040[0-9A-Z]{2}</regex>
+		<script>NULL</script>
+		<field_names>IBAN_NO
+
+IBAN_NUM
+
+IBAN
+
+IBANNR
+
+SWIFT
+
+SWIFT_NUM
+
+SWIFT_NUMBER
+
+SWIFT_NO
+
+SWIFT_CODE
+
+HESAP_NO
+
+BANKA_HESAP_NO
+
+BANKA_HESAP
+
+BANKA
+
+BANK
+
+BANKNR
+
+BANK_NO</field_names>
+	</ROW>
+
+	<ROW>
+		<id>65169</id>
+		<discovery_target_id>8</discovery_target_id>
+		<rule_type>MATCHES</rule_type>
+		<description>Price Info</description>
+		<regex>^\d{0,4}\.{1}(\d{1,4})?$|^\d{0,4}\,{1}(\d{1,4})?$</regex>
+		<script>NULL</script>
+		<field_names>PRICE
+
+TUTAR
+
+TOTAL
+
+SALARY
+
+AMOUNT
+
+MIKTAR
+
+TOPLAM
+
+FIYAT
+
+MAAS
+
+NET
+
+BRUT</field_names>
+	</ROW>
+
+	<ROW>
+		<id>65170</id>
+		<discovery_target_id>8</discovery_target_id>
+		<rule_type>JS</rule_type>
+		<description>Barcode</description>
+		<regex>NULL</regex>
+		<script>function calcul(){
+
+
+
+var BARCODE=&quot;${1}&quot;;
+
+
+
+if ((BARCODE== null) ||  (BARCODE.length==0) ) return false;
+
+BARCODE=BARCODE.replace(/\s+/g,&quot;&quot;);
+
+
+
+if (BARCODE.length != 17 &amp;&amp; BARCODE.length != 14 &amp;&amp; BARCODE.length != 13 &amp;&amp; BARCODE.length != 12 &amp;&amp; BARCODE.length != 8) return false;
+
+if (isNaN(BARCODE)) return false;
+
+
+
+var toplam=0;
+
+var ctrl_digit=Number(BARCODE.charAt(BARCODE.length-1));
+
+
+
+var a=0;
+
+for (var i=BARCODE.length-2;i&gt;=0;i--) {
+
+digit=Number(BARCODE.charAt(i));
+
+a++;
+
+if (a%2==1) toplam=toplam+digit*3;
+
+if (a%2==0) toplam=toplam+digit*1;
+
+}
+
+
+
+var x=toplam %10;
+
+
+
+if (x!=0) x=10-x;
+
+
+
+if (x!=ctrl_digit) return false;
+
+
+
+return true;
+
+}
+
+
+
+var a=true;
+
+a=calcul();</script>
+		<field_names>BARCODE
+
+BARKOD
+
+BCODE
+
+BARKODNO</field_names>
+	</ROW>
+
+	<ROW>
+		<id>65172</id>
+		<discovery_target_id>10</discovery_target_id>
+		<rule_type>MATCHES</rule_type>
+		<description>Security Info password, pin etc</description>
+		<regex>NULL</regex>
+		<script>NULL</script>
+		<field_names>PIN
+
+PINCODE
+
+PIN_CODE
+
+PUK
+
+PUKCODE
+
+PUK_CODE
+
+PASS
+
+PASSCODE
+
+PWD
+
+PASSWD
+
+PASSWORD
+
+SECURITY_CODE
+
+PIN1
+
+PIN2
+
+PUK1
+
+PUK2
+
+SECURITY_CODE
+
+SECURITY_ANSWER</field_names>
+	</ROW>
+</DATA>

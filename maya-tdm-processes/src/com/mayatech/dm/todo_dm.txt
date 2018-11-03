@@ -1,0 +1,56 @@
+ORACLE : SSL/TLS => https://docs.oracle.com/cd/B28359_01/network.111/b28530/asossl.htm#i1009600
+ORACLE : Versiyon ve build numarasýný otomatik nasýl aldýrabiliriz? Startup a da koymak gerekecek. 
+ORACLE : Port zaten dinleniyorsa proxy baslamasin... hata veriyor ama devam ediyor donguye. olmaz. 
+ORACLE : Hata verdi => select * from "SYS"."CON$" (web üzerinden)
+ORACLE : Hata Veriyor  CALL DBMS_OUTPUT.DISABLE()
+			1109118@Sun Aug 06 17:59:59 MSK 2017: java.lang.StringIndexOutOfBoundsException: String index out of range: 0
+				at java.lang.String.charAt(String.java:658)
+				at com.mayatech.dm.dmOracleParser.oracleParser.getChunksByCharArr(oracleParser.java:1897)
+				at com.mayatech.dm.dmOracleParser.oracleParser.locateSelectQueries(oracleParser.java:3023)
+				at com.mayatech.dm.dmOracleParser.oracleParser.locateSelectQueries(oracleParser.java:3092)
+				at com.mayatech.dm.ddmInstance.maskOracleSqlCommandWithParser(ddmInstance.java:847)
+ORACLE: Komut degisimlerinde degisen komutu degil, orjinali loglamalidir.  
+ORACLE: Dokunulan tablo ve kolonlarin loglanmasi, belli bir kosulda threashold u gectiginde alarm uretilmesi
+
+MSSQL : Synonym leri hallet ==> discoverObjectFromDb
+MSSQL : User database, Change default schema, servername konularýný hallet
+MSSQL : SetColumnException da catalog adi dikkate alinmamis. Exception test edilmelidir. 
+MSSQL : Donuyor = > select * FROM ADAGRUP2016."dbo".TBLMCEK 
+MSSQL : bu ifadeleri yasaklamak gerekebilir. OPENDATASOURCE, OPENJSON, OPENROWSET, OPENQUERY, OPENXML
+MSSQL : T-SQL Bloklarýný da maskele
+MSSQL : Max paket sayisini parametreden degil de MSSQL handshake paketlerinden almak gerekecek. 
+MSSQL : Management studio da calisirken arkaya hatalar atiyor. Sanirim TSQL bloklari ile ilgili .
+MSSQL : ODBC ve OLEDB de uzun SQL leri de dene
+MSSQL : sp_cursorprepare  gibi proc lar dinamik sql icin kullaniliyor. Bunlari engelle
+MSSQL : getTdsVersion() i dogru bir sekilde don. 
+MSSQL : tdsLib.readData de son kisimlari bitimemiz lazim. Tum data tiplerini okuyacak sekilde.
+MSSQL : alias boyle verilince sikinti oluyor = > SELECT se.is_admin_endpoint AS N'AdminConnection' ...
+MSSQL : Dinamik SQL leri ayarla
+MSSQL : current schema set :  ALTER USER UserName WITH DEFAULT_SCHEMA = NewSchemaName
+MSSQL : Satir bazli maskeleme
+MSSQL : Oracle da konulan kolon adina ya da kolon tipine ve icerige gore yapilan maskelemeleri de koy. 
+
+
+
+
+
+MONGO : Ekranda query de bu ikisi de decode edilebilmeli. ===> db["3test"].find() db.getCollection("3test").find()
+MONGO : Sorgulama seçenekleri de BSON olarak saklanabilir. Ayrica limit bigisi de alinabilir. 
+MONGO : keþifi tamamla
+MONGO : Array tipindeki entityt lerin maskelenmesini tamamla
+
+DISCOVERER : PDF, WORD gibi dokümanlar ile Imajlari da search et OCR ile. http://tika.apache.org/
+DISCOVERER : BLOB alanlarda Dosya tipini keþfetmeye çalýþarak mümkünse OCR dan geçir sonucu. 
+
+SYBASE : Discoverer çalýþmýyor. 
+
+GENEL  : STATEMENT_CHANGE ve LOG_CONFIGURATION a exception koy
+GENEL  : Secure client tarafini yaz
+GENEL  : policy lerden dolayý app exception da olan sessionlar için bir belirteç konulsun. bilelim.
+GENEL  : db Þifreleri encrypted sakla
+GENEL  : PostgreSQL destegi ekle
+
+
+3) STATIK : Sadece truncate tipli kayit iceren uygulamalarda (en az bir maskelenecek tablo olmali) uyarisi vermesin
+4) STATIK : Truncate den önce, truncate edilecek tabloya referans eden constraintleri disable et, sonra enable et novalidate
+     
