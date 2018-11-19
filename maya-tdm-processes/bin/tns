@@ -1,0 +1,21 @@
+http://www.pythian.com/blog/repost-oracle-protocol/
+
+http://www.thesprawl.org/research/oracle-tns-protocol/
+
+http://ckng62.blogspot.com.tr/2014/02/tns-data-packet-structure.html
+
+https://community.oracle.com/thread/615450?tstart=0
+
+https://github.com/SpiderLabs/net-tns/blob/master/spec/net/tns/packets/data_packet_spec.rb
+
+MYSQL 
+
+https://dev.mysql.com/doc/internals/en/protocoltext-resultset.html
+
+
+MSSQL TDS
+
+http://www.freetds.org/tds.html
+
+
+https://msdn.microsoft.com/en-us/library/dd304523.aspx

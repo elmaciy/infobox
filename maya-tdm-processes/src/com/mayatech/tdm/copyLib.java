@@ -229,6 +229,7 @@ public class copyLib  {
 		dbDataTypeMapping.add(new String[]{"MSSQL","BINARY",			"BYTE"});
 		dbDataTypeMapping.add(new String[]{"MSSQL","IMAGE",				"BINARY"});
 		dbDataTypeMapping.add(new String[]{"MSSQL","VARBINARY",			"BYTE"});
+		dbDataTypeMapping.add(new String[]{"MSSQL","BIT",				"BOOLEAN"});
 
 		
 		
@@ -1350,10 +1351,21 @@ public class copyLib  {
 						pstmtSource.setNull((b+1), java.sql.Types.BINARY);
 					else
 						pstmtSource.setNull((b+1), java.sql.Types.BINARY);
-						//pstmtSource.setFloat((b+1), Float.parseBinary(bindlist.get(b)[BIND_VAL]));
-						
-						
 				} 
+				else if (bindlist.get(b)[BIND_TYPE].equals("BOOLEAN")) {
+					if (bindlist.get(b)[BIND_VAL] == null || bindlist.get(b)[BIND_VAL].equals(""))
+						pstmtSource.setNull((b+1), java.sql.Types.BOOLEAN);
+					else {
+						String boolVal=bindlist.get(b)[BIND_VAL];
+						if (boolVal.equals("1")) 
+							boolVal="true";
+						else if (boolVal.equals("0")) 
+							boolVal="false";
+						pstmtSource.setBoolean((b+1), Boolean.parseBoolean(boolVal));
+					}
+						
+						
+				}
 				else {
 					pstmtSource.setString((b+1), bindlist.get(b)[BIND_VAL]);
 				}
@@ -1685,9 +1697,9 @@ public class copyLib  {
 					
 					for (int b=0;b<recChangedArr.size();b++) 
 						if (ct.fields.get(b)[0].length()>1000)
-							mylog("Exception@Insert Val["+(b+1)+","+ct.fields.get(b)[0]+"] :  {"+recChangedArr.get(b).substring(0, 1000)+"...} (len:"+recChangedArr.get(b).length()+")");
+							mylog("Exception@Insert Val["+(b+1)+","+ct.fields.get(b)[0]+" (ft :"+ct.fields.get(b)[1]+")(bt :"+ct.fields.get(b)[3]+")] :  {"+recChangedArr.get(b).substring(0, 1000)+"...} (len:"+recChangedArr.get(b).length()+")");
 						else 
-							mylog("Exception@Insert Val["+(b+1)+","+ct.fields.get(b)[0]+"] :  {"+recChangedArr.get(b)+"} (len:"+recChangedArr.get(b).length()+")");
+							mylog("Exception@Insert Val["+(b+1)+","+ct.fields.get(b)[0]+" (ft :"+ct.fields.get(b)[1]+")(bt :"+ct.fields.get(b)[3]+")] :  {"+recChangedArr.get(b)+"} (len:"+recChangedArr.get(b).length()+")");
 					
 					
 					mylog(genLib.getStackTraceAsStringBuilder(e).toString());
@@ -4391,6 +4403,7 @@ public class copyLib  {
 	final String BIND_TYPE_NUMERIC="NUMERIC";
 	final String BIND_TYPE_DATE="DATE";
 	final String BIND_TYPE_TIMESTAMP="TIMESTAMP";
+	final String BIND_TYPE_BOOLEAN="BOOLEAN";
 	
 	final String BIND_DATE_TIME_DEFAULT_TYPE="yyyy-MM-dd HH:mm:ss";
 	final String BIND_DATE_TIME_SHORT_DOTTED_TYPE="dd.MM.yyyyy";
@@ -4908,6 +4921,40 @@ public class copyLib  {
 							}
 								
 						}
+						
+						
+						
+						break;
+					}
+					
+					
+					case BIND_TYPE_BOOLEAN : {
+						
+
+						if (is_field_changed) {
+							try {
+								boolean changed_val=false;
+								changed_val=Boolean.parseBoolean(changed_field_value.toString().equals("1") ? "true" : changed_field_value.toString());
+								if (tarPstmt!=null)
+									tarPstmt.setBoolean(targetFieldNo+1, changed_val);
+							} 
+							catch(Exception e) {
+								if (tarPstmt!=null)
+									tarPstmt.setBoolean(targetFieldNo+1, srcRset.getBoolean(sourceFieldNo+1));
+								
+								e.printStackTrace();
+							}
+						} else 
+							if (sourceFieldNo==-1) {
+								boolean changed_val=false;
+								changed_val=Boolean.parseBoolean(changed_field_value.toString().equals("1") ? "true" : changed_field_value.toString());
+								tarPstmt.setBoolean(targetFieldNo+1, changed_val);
+								ret1=changed_field_value.toString();
+							} else {
+								if (targetFieldNo>-1 && tarPstmt!=null) 
+									tarPstmt.setBoolean(targetFieldNo+1, srcRset.getBoolean(sourceFieldNo+1));
+
+							}
 						
 						
 						
